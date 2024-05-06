@@ -20,22 +20,23 @@ export default async function ImageCard1() {
     // }
 
     const itemsData = [
-        { img: card1, title: "iPhone 15 Pro", description: "ไทเทเนียม", price: "" },
-        { img: card2, title: "Home Pod", description: "", price: "" },
-        { img: card3, title: "hello", description: "", price: "" },
-        { img: card4, title: "hello", description: "", price: "" },
-        { img: card5, title: "hello", description: "", price: "" },
-        { img: card6, title: "hello", description: "", price: "" },
+        { img: card1, title: "IPHONE 15 PRO", description: "ไทเทเนียม", price: "เริ่มต้นที่ ฿41,900", textColor: 'white' },
+        { img: card2, title: "HOMEPOD", description: "เสียงอันล้ำลึก", price: "฿11,490", textColor: 'white' },
+        { img: card3, title: "HOMEPOD MINI", description: "สีสันใหม่แห่งการฟัง", price: "฿ 3,890", textColor: 'black' },
+        { img: card4, title: "MACBOOK AIR", description: "ออกแบบมาให้ไปไหนไปกัน", price: "เริ่มต้นที่ ฿ 34,900", textColor: 'black' },
+        { img: card5, title: "APPLE WATCH SERIES 9", description: "ฉลาดขึ้น สว่างขึ้น ทรงพลังขึ้น", price: "เริ่มต้นที่ ฿ 15,900", textColor: 'white' },
+        { img: card6, title: "IPAD", description: "รักเลย วาดเลย เอาใจไปเลย", price: "เริ่มต้นที่ ฿ 14,900", textColor: 'black' },
     ]
     console.log('result: ' + itemsData[0].img.src)
 
     return (
-        <Box sx={{ display: 'flex', gap: 2.5 }}>
+        <Box sx={{ display: 'flex', gap: 2.5, overflowX: 'scroll' }}>
             {itemsData.map((item) => (
-                <Box sx={{ aspectRatio: 4 / 5, backgroundImage: `url(${item.img.src})`, width: 400, height: 500, borderRadius: 5, my: 5 }}>
-                    <Box sx={{ p: 4, }}>
+                <Box sx={{ aspectRatio: 4 / 5, backgroundImage: `url(${item.img.src})`, width: 400, height: 500, borderRadius: 5, my: 5, backgroundSize: 'contain', boxShadow: 20 }}>
+                    <Box sx={{ p: 4, color: item.textColor, display: 'flex', flexDirection: 'column', gap: 1 }}>
                         <Typography>{item.title}</Typography>
-                        <Typography>{item.description}</Typography>
+                        <Typography variant="h5">{item.description}</Typography>
+                        <Typography>{item.price}</Typography>
                     </Box>
                 </Box>
             ))}
