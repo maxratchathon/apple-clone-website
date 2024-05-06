@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box, Hidden, ImageList, ImageListItem, Link, Typography } from "@mui/material";
 import { useEffect } from "react";
 import ImageLists from "@/components/ImageLists";
+import ImageCard1 from "@/components/ImageCard1";
 
 
 
@@ -70,6 +71,11 @@ export default function Home() {
       </Box>
 
       <ImageLists />
+
+      <Box sx={{ my: 10 }}>
+        <Typography variant="h4">ผลิตภัณฑ์ล่าสุดของเรา มาดูว่ามีอะไรใหม่บ้างได้เลย</Typography>
+        <ImageCard1/>
+      </Box>
 
 
 

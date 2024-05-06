@@ -1,3 +1,4 @@
+'use client'
 import item1 from "../../public/home-items/mac.png"
 import item2 from "../../public/home-items/iphone.png"
 import item3 from "../../public/home-items/ipad.png"
@@ -9,6 +10,7 @@ import item8 from "../../public/home-items/home-pod.png"
 import item9 from "../../public/home-items/others.png"
 import item10 from "../../public/home-items/gift-card.png"
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material"
+import { useRef } from "react"
 
 
 
@@ -27,15 +29,29 @@ export default function ImageLists() {
         { img: item10, title: 'บัตรของขวัญ Apple Store' }
     ];
 
+    const containerRef = useRef(null)
+
+    const handleScroll = () => {
+        console.log(containerRef.current)
+        // if (containerRef.current) {
+        //     const scrollLeft = containerRef.current;
+        //     // Do something with the scrollLeft value
+        //     console.log('Scroll left:', scrollLeft);
+        // }
+    };
+
+
     return (
 
-        < Box >
+        < Box sx={{}}  >
             <ImageList sx={{
                 position: 'relative',
                 flexWrap: 'nowrap',
-                scrollBehavior: 'smooth'
+                scrollBehavior: 'smooth',
+                overflowX: 'scroll'
+
             }
-            } cols={itemData.length}  >
+            } onScroll={handleScroll} ref={containerRef} cols={itemData.length}  >
                 {itemData.map((item) => (
                     <ImageListItem key={item.title} sx={{ mx: 2 }}>
                         <img
@@ -48,7 +64,7 @@ export default function ImageLists() {
                     </ImageListItem>
                 ))}
             </ImageList>
-        </Box >
+        </Box>
     )
 
 }
