@@ -42,13 +42,24 @@ export default async function ImageCard1() {
 
     return (
         <Box sx={{ position: 'relative' }}>
-            <Box id='slider' sx={{ display: 'flex', gap: 2.5, overflowX: 'scroll', scrollBehavior: 'smooth', }}>
-                <Box sx={{ position: 'absolute', top: '40%', display: 'flex', justifyContent: "space-between    ", width: '100%', opacity: '30%' }}>
+            <Box id='slider' sx={{
+                display: 'flex', gap: 2.5, overflowX: 'scroll', scrollBehavior: 'smooth',
+            }}>
+                <Box sx={{
+                    position: 'absolute', top: '40%', display: 'flex', justifyContent: "space-between    ", zIndex: 1, width: '100%', opacity: '30%',
+
+                }}>
                     <IoCaretBackCircle color="grey" onClick={slideLeft} size={90} />
                     <IoCaretForwardCircle color="grey" onClick={slideRight} size={90} />
                 </Box>
                 {itemsData.map((item) => (
-                    <Box sx={{ aspectRatio: 4 / 5, backgroundImage: `url(${item.img.src})`, width: 400, height: 500, borderRadius: 5, my: 5, backgroundSize: 'contain', boxShadow: 20 }}>
+                    <Box sx={{
+                        aspectRatio: 4 / 5, backgroundImage: `url(${item.img.src})`, width: 400, height: 500, borderRadius: 5, my: 5, backgroundSize: 'contain', boxShadow: 20, ":hover": {
+                            transform: 'scale(1.02)',
+                            display: 'block'
+
+                        }, transition: '0.5s'
+                    }}>
                         <Box sx={{ p: 4, color: item.textColor, display: 'flex', flexDirection: 'column', gap: 1 }}>
                             <Typography>{item.title}</Typography>
                             <Typography variant="h5">{item.description}</Typography>
