@@ -58,7 +58,7 @@ export default async function ImageCard1() {
                             transform: 'scale(1.02)',
                             display: 'block'
 
-                        }, transition: '0.5s'
+                        }, transition: '1s'
                     }}>
                         <Box sx={{ p: 4, color: item.textColor, display: 'flex', flexDirection: 'column', gap: 1 }}>
                             <Typography>{item.title}</Typography>

@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
 import Button from '@mui/material/Button';
@@ -7,6 +8,8 @@ import { Box, Hidden, ImageList, ImageListItem, Link, Typography } from "@mui/ma
 import { useEffect } from "react";
 import ImageLists from "@/components/ImageLists";
 import ImageCard1 from "@/components/ImageCard1";
+import { IoCaretBackCircle, IoCaretForwardCircle } from "react-icons/io5";
+import NavBar from "@/components/NavBar";
 
 
 
@@ -19,22 +22,9 @@ import ImageCard1 from "@/components/ImageCard1";
 export default function Home() {
 
 
-  const navBar = {
-    logo: "<Apple>",
-    store: "Store",
-    mac: "Mac",
-    ipad: "iPad",
-    iphone: "iphone",
-    watch: "Watch",
-    airPods: "AirPods",
-    tvAndHome: "TV & Home",
-    entertainment: "Entertainment",
-    accessories: "Accessories",
-    support: "Support",
-    searchIcon: "<Search>",
-    shopIcon: "<Shop>"
 
-  }
+
+
 
 
 
@@ -45,9 +35,8 @@ export default function Home() {
 
   return (
     <Container >
-      <Box sx={{ display: "flex", justifyContent: 'center', gap: "10px" }}>
-        {Object.entries(navBar).map(([key, value]) => (<Typography sx={{ fontSize: '15px' }} key={key}>{value}</Typography>))}
-      </Box>
+      <NavBar />
+
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', my: "10vh" }}>
         <Box sx={{ maxWidth: '600px' }}>
           <Typography variant="h3" component='span'>ร้านของเรา{' '}
@@ -74,7 +63,7 @@ export default function Home() {
 
       <Box sx={{ my: 10 }}>
         <Typography variant="h4">ผลิตภัณฑ์ล่าสุดของเรา มาดูว่ามีอะไรใหม่บ้างได้เลย</Typography>
-        <ImageCard1/>
+        <ImageCard1 />
       </Box>
 
 
@@ -82,7 +71,7 @@ export default function Home() {
 
 
     </Container >
-    
+
   );
 }
 
