@@ -41,9 +41,12 @@ export default async function ImageCard1() {
     }
 
     return (
-        <Box sx={{ position: 'relative' }}>
+        <Box sx={{ position: 'relative', width: '100vw', overflow: 'visible' }}>
+
             <Box id='slider' sx={{
-                display: 'flex', gap: 2.5, overflowX: 'scroll', scrollBehavior: 'smooth',
+                display: 'flex', gap: 2.5, scrollBehavior: 'smooth', overflow: 'scroll', '::-webkit-scrollbar': {
+                    width: 0,
+                }
             }}>
                 <Box sx={{
                     position: 'absolute', top: '40%', display: 'flex', justifyContent: "space-between    ", zIndex: 1, width: '100%', opacity: '30%',
@@ -57,7 +60,6 @@ export default async function ImageCard1() {
                         aspectRatio: 4 / 5, backgroundImage: `url(${item.img.src})`, width: 400, height: 500, borderRadius: 5, my: 5, backgroundSize: 'contain', boxShadow: 20, ":hover": {
                             transform: 'scale(1.02)',
                             display: 'block'
-
                         }, transition: '1s'
                     }}>
                         <Box sx={{ p: 4, color: item.textColor, display: 'flex', flexDirection: 'column', gap: 1 }}>

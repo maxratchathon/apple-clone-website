@@ -11,6 +11,7 @@ import item9 from "../../public/home-items/others.png"
 import item10 from "../../public/home-items/gift-card.png"
 import { Box, ImageList, ImageListItem, Typography } from "@mui/material"
 import { useRef } from "react"
+import { IoCaretBackCircle, IoCaretForwardCircle } from "react-icons/io5"
 
 
 
@@ -40,15 +41,33 @@ export default function ImageLists() {
         // }
     };
 
+    const slideLeft = () => {
+        const slider: any = document.getElementById('imageListsSlider')
+        slider.scrollLeft = slider.scrollLeft - 100
+    }
+    const slideRight = () => {
+        const slider: any = document.getElementById('imageListsSlider')
+        slider.scrollLeft = slider.scrollLeft + 100
+    }
+
 
     return (
 
-        < Box sx={{}}  >
-            <ImageList sx={{
-                position: 'relative',
-                flexWrap: 'nowrap',
+        < Box sx={{ position: 'relative' }}  >
+            <Box sx={{
+                position: 'absolute', top: '20%', display: 'flex', justifyContent: "space-between    ", zIndex: 1, width: '100%', opacity: '30%',
+
+            }}>
+                <IoCaretBackCircle color="grey" onClick={slideLeft} size={90} />
+                <IoCaretForwardCircle color="grey" onClick={slideRight} size={90} />
+            </Box>
+            <ImageList id='imageListsSlider' sx={{
+
                 scrollBehavior: 'smooth',
-                overflowX: 'scroll'
+                '::-webkit-scrollbar': {
+                    width: 0
+                }
+
 
             }
             } onScroll={handleScroll} ref={containerRef} cols={itemData.length}  >
