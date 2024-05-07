@@ -5,12 +5,26 @@ import { Box } from "@mui/material";
 
 export default function HeroBannerContainer() {
 
+    const bannerText1 = {
+        title: "HOMEPOD",
+        des: "description",
+        day: "day",
+        color: "white"
+    }
+
+    const bannerText2 = {
+        title: "HOMEPOD MINI",
+        des: "description",
+        day: "day",
+        color: "black"
+    }
+
 
 
     return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-            <HeroBanner img={homepodImg.src}></HeroBanner>
-            <HeroBanner img={homepodMiniImg.src}></HeroBanner>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mx: -5 }}>
+            <HeroBanner textArr={bannerText1} img={homepodImg.src}></HeroBanner>
+            <HeroBanner textArr={bannerText2} img={homepodMiniImg.src}></HeroBanner>
         </Box>
     )
 }
