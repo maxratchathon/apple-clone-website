@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { IoCaretBackCircle, IoCaretForwardCircle } from "react-icons/io5";
+import appleLogo from '../../public/apple_logo.png'
 
 
 export default function ItemIconCard() {
 
     const navBar = {
-        logo: "<Apple>",
         store: "Store",
         mac: "Mac",
         ipad: "iPad",
@@ -17,8 +17,7 @@ export default function ItemIconCard() {
         entertainment: "Entertainment",
         accessories: "Accessories",
         support: "Support",
-        searchIcon: "<Search>",
-        shopIcon: "<Shop>"
+
 
 
     }
@@ -31,8 +30,17 @@ export default function ItemIconCard() {
 
     return (
         <Box>
-            <Box onMouseEnter={onHoverHandler} onMouseLeave={onHoverHandler} sx={{ display: "flex", justifyContent: 'center', gap: "10px" }}>
-                {Object.entries(navBar).map(([key, value]) => (<Typography sx={{ fontSize: '15px' }} key={key}>{value}</Typography>))}
+            <Box onMouseEnter={onHoverHandler} onMouseLeave={onHoverHandler} sx={{ display: "flex", justifyContent: 'center', gap: "15px" }}>
+                <img src={appleLogo.src} width={17} ></img>
+                {Object.entries(navBar).map(([key, value]) => (<Typography sx={{
+                    fontSize: '15px', ":hover": {
+                        scale: '1.2',
+                        cursor: 'pointer'
+
+                    },
+                    transition: '0.5s'
+
+                }} key={key}>{value}</Typography>))}
             </Box>
             <Box sx={{ opacity: navBarHover ? 1 : 0, transition: "1s", height: navBarHover ? '500px' : '0px' }}>
                 <Box display='flex' flexDirection='column' alignItems='center' sx={{ justifyContent: 'center', my: 5 }}>
