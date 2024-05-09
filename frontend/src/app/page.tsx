@@ -11,6 +11,7 @@ import ImageCard1 from "@/components/ImageCard1";
 import { IoCaretBackCircle, IoCaretForwardCircle } from "react-icons/io5";
 import NavBar from "@/components/NavBar";
 import HeroBannerContainer from "@/components/HeroBannerContainer";
+import Footer from "@/components/Footer";
 
 
 
@@ -70,7 +71,10 @@ export default function Home() {
         </Box>
       </Container>
       <ImageCard1 />
-      <HeroBannerContainer></HeroBannerContainer>
+      <HeroBannerContainer />
+      <Container>
+        <Footer />
+      </Container>
     </Box>
 
 
