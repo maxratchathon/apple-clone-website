@@ -7,15 +7,15 @@ export default function HeroBannerContainer() {
 
     const bannerText1 = {
         title: "HOMEPOD",
-        des: "description",
-        day: "day",
+        des: "เสียงอันล้ำลึก",
+        day: "เริ่มวางจำหน่าย 10 พค.",
         color: "white"
     }
 
     const bannerText2 = {
         title: "HOMEPOD MINI",
-        des: "description",
-        day: "day",
+        des: "เสียงอันล้ำลึก แถมพกพาได้",
+        day: "เริ่มวางจำหน่าย 10 พค.",
         color: "black"
     }
 
